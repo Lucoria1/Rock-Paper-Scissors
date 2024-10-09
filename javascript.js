@@ -13,9 +13,18 @@ function getComputerChoice () {
     else if (computerChoice > 2/3) return "Scissors";
 }
 
-console.log(getComputerChoice())
+let humanChoice = "";
 
-function getHumanChoice () {
-    const humanChoice
+function rock () {
+    return "Rock";
 }
+
+function paper () {
+    return "Paper";
+}
+
+function scissors () {
+    return "Scissors"
+}
+
 
