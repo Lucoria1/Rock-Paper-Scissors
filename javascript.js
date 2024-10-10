@@ -63,9 +63,9 @@ let computerChoice = getComputerChoice();
 
 function getComputerChoice () {
    const computerChoice = Math.random();
-   if (computerChoice <= 1/3) return "Rock";
-   else if (computerChoice > 1/3 && computerChoice <= 2/3) return "Paper";
-   else if (computerChoice > 2/3 && computerChoice <= 1) return "Scissors";
+   if (computerChoice <= 1/3) return "rock";
+   else if (computerChoice > 1/3 && computerChoice <= 2/3) return "paper";
+   else if (computerChoice > 2/3 && computerChoice <= 1) return "scissors";
 };
 
 console.log(computerChoice);
@@ -79,6 +79,27 @@ function getHumanChoice () {
 
 console.log(humanChoice)
 
+let humanScore = 0;
+let computerScore = 0;
+let result = playRound(humanChoice, computerChoice);
 
+function playRound (par1, par2){
+   let result = "";
+if (par1 === "rock" && par2 === "rock") result = "Tie! Both chose Rock!";
+else if (par1 === "rock" && par2 === "paper") result = "You lose! Paper beats Rock!";
+else if (par1 === "rock" && par2 === "scissors") result = "You win! Rock beats Scissors!";
+
+else if (par1 === "paper" && par2 === "paper") result = "Tie! Both chose Paper!";
+else if (par1 === "paper" && par2 === "scissors") result = "You lose! Scissors beats Paper!";
+else if (par1 === "paper" && par2 === "rock") result = "You win! Paper beats Rock!";
+
+else if (par1 === "scissors" && par2 === "scissors") result = "Tie! Both chose Scissors!";
+else if (par1 === "scissors" && par2 === "rock") result = "You lose! Rock beats Scissors!";
+else if (par1 === "scissors" && par2 === "paper") result = "You win! Scissors beats Paper!";
+
+return result
+}
+
+console.log(result)
 
 
