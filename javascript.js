@@ -1,11 +1,5 @@
+
 /*
-user picks an option (R/P/S)
-computer randomly generates an option
-compare the options and produce result
-display result
-*/
-
-
 function rock () {
     const humanChoice = "Rock";
     let computerChoice = getComputerChoice();
@@ -56,5 +50,23 @@ function scissors () {
     else if (computerChoice === "Paper") return "Computer chose Paper! Win!";
     else if (computerChoice === "Scissors") return "Computer chose Scissors! Tie!";
 }
+*/
+
+/*
+user picks an option (R/P/S)
+computer randomly generates an option
+compare the options and produce result
+display result
+*/
+
+function getComputerChoice () {
+   computerChoice = Math.random();
+   if (computerChoice <= 1/3) return "Rock";
+   else if (computerChoice > 1/3 && computerChoice <= 2/3) return "Paper";
+   else if (computerChoice > 2/3 && computerChoice <= 1) return "Scissors";
+
+}
+
+console.log(getComputerChoice())
 
 
