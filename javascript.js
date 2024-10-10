@@ -68,8 +68,6 @@ function getComputerChoice () {
    else if (computerChoice > 2/3 && computerChoice <= 1) return "scissors";
 };
 
-console.log(computerChoice);
-
 let humanChoice = getHumanChoice();
 
 function getHumanChoice () {
@@ -77,37 +75,42 @@ function getHumanChoice () {
   return humanChoice    
 };
 
-console.log(humanChoice)
-
-let humanScore = 0;
-let computerScore = 0;
-let result = playRound(humanChoice, computerChoice);
-
-function playRound (par1, par2){
-   let result = "";
-if (par1 === "rock" && par2 === "rock") result = "Tie! Both chose Rock!";
-else if (par1 === "rock" && par2 === "paper") result = "You lose! Paper beats Rock!";
-else if (par1 === "rock" && par2 === "scissors") result = "You win! Rock beats Scissors!";
-
-else if (par1 === "paper" && par2 === "paper") result = "Tie! Both chose Paper!";
-else if (par1 === "paper" && par2 === "scissors") result = "You lose! Scissors beats Paper!";
-else if (par1 === "paper" && par2 === "rock") result = "You win! Paper beats Rock!";
-
-else if (par1 === "scissors" && par2 === "scissors") result = "Tie! Both chose Scissors!";
-else if (par1 === "scissors" && par2 === "rock") result = "You lose! Rock beats Scissors!";
-else if (par1 === "scissors" && par2 === "paper") result = "You win! Scissors beats Paper!";
-
-return result
-}
-
-console.log(result);
-
-if (result === "You lose! Paper beats Rock!" || result === "You lose! Scissors beats Paper!" || result === "You lose! Rock beats Scissors!") computerScore++;
-if (result === "You win! Rock beats Scissors!" || result === "You win! Paper beats Rock!" || result === "You win! Scissors beats Paper!") humanScore++;
-
-console.log(`computer: ${computerScore}`);
-console.log(`you: ${humanScore}`);
-
-function playGame () {
+ function playGame () {
+    let humanScore = 0;
+    let computerScore = 0;
+    let result = playRound(humanChoice, computerChoice);
     
+    function playRound (par1, par2){
+        let result = "";
+     if (par1 === "rock" && par2 === "rock") result = "Tie! Both chose Rock!";
+     else if (par1 === "rock" && par2 === "paper") result = "You lose! Paper beats Rock!";
+     else if (par1 === "rock" && par2 === "scissors") result = "You win! Rock beats Scissors!";
+     
+     else if (par1 === "paper" && par2 === "paper") result = "Tie! Both chose Paper!";
+     else if (par1 === "paper" && par2 === "scissors") result = "You lose! Scissors beats Paper!";
+     else if (par1 === "paper" && par2 === "rock") result = "You win! Paper beats Rock!";
+     
+     else if (par1 === "scissors" && par2 === "scissors") result = "Tie! Both chose Scissors!";
+     else if (par1 === "scissors" && par2 === "rock") result = "You lose! Rock beats Scissors!";
+     else if (par1 === "scissors" && par2 === "paper") result = "You win! Scissors beats Paper!";
+          
+     return result;
+     }
+
+     if (result === "You lose! Paper beats Rock!" || result === "You lose! Scissors beats Paper!" || result === "You lose! Rock beats Scissors!") computerScore++;
+     else if (result === "You win! Rock beats Scissors!" || result === "You win! Paper beats Rock!" || result === "You win! Scissors beats Paper!") humanScore++;
+
+     return console.log(result),
+     console.log(`Computer Chose: ${computerChoice}!`),
+     console.log(`You Chose: ${humanChoice}!`),
+     console.log(`you: ${humanScore}`),
+     console.log(`computer: ${computerScore}`);
+
 };
+
+console.log(playGame())
+
+
+
+
+
