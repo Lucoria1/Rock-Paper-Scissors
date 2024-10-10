@@ -100,6 +100,14 @@ else if (par1 === "scissors" && par2 === "paper") result = "You win! Scissors be
 return result
 }
 
-console.log(result)
+console.log(result);
 
+if (result === "You lose! Paper beats Rock!" || result === "You lose! Scissors beats Paper!" || result === "You lose! Rock beats Scissors!") computerScore++;
+if (result === "You win! Rock beats Scissors!" || result === "You win! Paper beats Rock!" || result === "You win! Scissors beats Paper!") humanScore++;
 
+console.log(`computer: ${computerScore}`);
+console.log(`you: ${humanScore}`);
+
+function playGame () {
+    
+};
