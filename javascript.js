@@ -114,7 +114,7 @@ playGame()
 
 let overallScore = "";
 if (humanScore === computerScore) overallScore = `Tie! You won: ${humanScore}, Computer won: ${computerScore}`
-if (humanScore > computerScore) overallScore = `You Win! You won: ${humanScore}, Computer won: ${computerScoreScore}`
+if (humanScore > computerScore) overallScore = `You Win! You won: ${humanScore}, Computer won: ${computerScore}`
 if (humanScore < computerScore) overallScore = `You Lose! You won: ${humanScore}, Computer won: ${computerScore}`
 
 alert(overallScore)
